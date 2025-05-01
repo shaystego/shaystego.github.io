@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Your Photo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 1em;
+    }
+
+    .upload-container {
+      background: #fff;
+      padding: 2em;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .upload-container img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 1em;
+    }
+
+    h2 {
+      margin-bottom: 1em;
+      color: #222;
+      font-size: 1.5rem;
+    }
+
+    .custom-file-upload {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 0.75em 2em;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 1em;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    input[type="submit"] {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 0.75em 2em;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 1em;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input[type="submit"]:hover {
+      background: #0056b3;
+    }
+
+    .note {
+      font-size: 0.95em;
+      color: #555;
+      margin-top: 1em;
+    }
+
+    @media (max-width: 500px) {
+      .upload-container {
+        padding: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="upload-container">
+    <img src="Work in Pork logo.png" alt="Work in Pork Logo">
+    <h2>Take Your PIGture!</h2>
+    <form id="upload_form" action="https://api.fotomasterltd.net/photo-mosaic-booth/user_upload.php" method="post" enctype="multipart/form-data">
+      
+      <!-- Hidden file input with front camera preference -->
+      <label for="Filedata" class="custom-file-upload">Take a Photo</label>
+      <input type="file" name="Filedata" id="Filedata" accept="image/*" capture="user" required>
+
+      <input type="submit" value="Print" name="submit">
+
+      <input type="hidden" name="pid" value="2102003602">
+      <input type="hidden" name="eventName" value="1745855466741-TEST_FFA_Conv">
+      <input type="hidden" name="weakPassword" value="fotomaster_browse">
+      <input type="hidden" name="redirect_url" value="https://fotomasterltd.net">
+    </form>
+    <p class="note">Once you send your photo to the printer, head over to step 2!</p>
+  </div>
+
+</body>
+</html>
